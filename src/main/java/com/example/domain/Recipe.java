@@ -1,4 +1,4 @@
-package com.example.recipeapp.domain;
+package com.example.domain;
 
 import javax.persistence.*;
 import java.util.Set;
