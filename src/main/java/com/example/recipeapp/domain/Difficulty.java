@@ -1,6 +1,6 @@
 package com.example.recipeapp.domain;
 
-public enum Difficulity {
+public enum Difficulty {
     EASY, MODERATE, HARD
 }
 

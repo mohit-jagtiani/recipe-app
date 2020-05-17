@@ -1,8 +1,12 @@
 package com.example.recipeapp.domain;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Ingredient {
 
@@ -17,43 +21,21 @@ public class Ingredient {
     @ManyToOne
     private Recipe recipe;
 
-    public Long getId() {
-        return id;
+    public Ingredient() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
+    public Ingredient(String description, BigDecimal amount, String unit) {
         this.description = description;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
         this.amount = amount;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
         this.unit = unit;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
+    public Ingredient(String description, BigDecimal amount, String unit, Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.unit = unit;
         this.recipe = recipe;
     }
+
+
 }
