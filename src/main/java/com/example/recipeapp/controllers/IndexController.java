@@ -1,12 +1,10 @@
 package com.example.recipeapp.controllers;
 
-import com.example.recipeapp.service.RecipeService;
+import com.example.recipeapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Optional;
 
 @Slf4j
 @Controller
