@@ -13,9 +13,6 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-/**
- * Created by jt on 6/21/17.
- */
 public class IngredientToIngredientCommandTest {
 
     public static final Recipe RECIPE = new Recipe();
@@ -43,7 +40,7 @@ public class IngredientToIngredientCommandTest {
     }
 
     @Test
-    public void testConvertNullUOM() throws Exception {
+    public void testConvert() throws Exception {
         //given
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);
@@ -51,6 +48,7 @@ public class IngredientToIngredientCommandTest {
         ingredient.setAmount(AMOUNT);
         ingredient.setDescription(DESCRIPTION);
         ingredient.setUnit(UOM);
+
         //when
         IngredientCommand ingredientCommand = converter.convert(ingredient);
         //then
@@ -58,25 +56,5 @@ public class IngredientToIngredientCommandTest {
         assertEquals(AMOUNT, ingredientCommand.getAmount());
         assertEquals(DESCRIPTION, ingredientCommand.getDescription());
         assertEquals(UOM, ingredientCommand.getUom());
-    }
-
-    @Test
-    public void testConvertWithUom() throws Exception {
-        //given
-        Ingredient ingredient = new Ingredient();
-        ingredient.setId(ID_VALUE);
-        ingredient.setRecipe(RECIPE);
-        ingredient.setAmount(AMOUNT);
-        ingredient.setDescription(DESCRIPTION);
-
-
-        //when
-        IngredientCommand ingredientCommand = converter.convert(ingredient);
-        //then
-        assertEquals(ID_VALUE, ingredientCommand.getId());
-        // assertEquals(RECIPE, ingredientCommand.get);
-        assertEquals(AMOUNT, ingredientCommand.getAmount());
-        assertEquals(DESCRIPTION, ingredientCommand.getDescription());
-       // assertEquals(UOM, ingredientCommand.getUom());
     }
 }

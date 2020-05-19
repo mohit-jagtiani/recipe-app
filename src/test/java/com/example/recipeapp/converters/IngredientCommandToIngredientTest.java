@@ -57,24 +57,4 @@ public class IngredientCommandToIngredientTest {
         assertEquals(UOM, ingredient.getUnit());
     }
 
-    @Test
-    public void convertWithNullUOM() throws Exception {
-        //given
-        IngredientCommand command = new IngredientCommand();
-        command.setId(ID_VALUE);
-        command.setAmount(AMOUNT);
-        command.setDescription(DESCRIPTION);
-        command.setUom(UOM);
-
-        //when
-        Ingredient ingredient = converter.convert(command);
-
-        //then
-        assertNotNull(ingredient);
-        assertEquals(ID_VALUE, ingredient.getId());
-        assertEquals(AMOUNT, ingredient.getAmount());
-        assertEquals(DESCRIPTION, ingredient.getDescription());
-        assertEquals(UOM, ingredient.getUnit());
-    }
-
 }
